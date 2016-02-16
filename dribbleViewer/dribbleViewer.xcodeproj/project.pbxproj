@@ -13,7 +13,10 @@
 		840241621C738E83002C269C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840241601C738E83002C269C /* Main.storyboard */; };
 		840241641C738E83002C269C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840241631C738E83002C269C /* Assets.xcassets */; };
 		840241671C738E83002C269C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840241651C738E83002C269C /* LaunchScreen.storyboard */; };
-		84F6B65D1C73A25D00549999 /* ShotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F6B65C1C73A25D00549999 /* ShotsViewController.m */; };
+		84F6B6601C73A4A500549999 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84F6B65E1C73A4A500549999 /* DataModel.xcdatamodeld */; };
+		84F6B66B1C73A8C600549999 /* ShotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F6B66A1C73A8C600549999 /* ShotsViewController.m */; };
+		84F6B6701C73A8E800549999 /* Shot+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F6B66D1C73A8E800549999 /* Shot+CoreDataProperties.m */; };
+		84F6B6711C73A8E800549999 /* Shot.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F6B66F1C73A8E800549999 /* Shot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +29,13 @@
 		840241631C738E83002C269C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		840241661C738E83002C269C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		840241681C738E83002C269C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84F6B65B1C73A25D00549999 /* ShotsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotsViewController.h; sourceTree = "<group>"; };
-		84F6B65C1C73A25D00549999 /* ShotsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotsViewController.m; sourceTree = "<group>"; };
+		84F6B65F1C73A4A500549999 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		84F6B6691C73A8C600549999 /* ShotsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotsViewController.h; sourceTree = "<group>"; };
+		84F6B66A1C73A8C600549999 /* ShotsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotsViewController.m; sourceTree = "<group>"; };
+		84F6B66C1C73A8E800549999 /* Shot+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Shot+CoreDataProperties.h"; sourceTree = "<group>"; };
+		84F6B66D1C73A8E800549999 /* Shot+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Shot+CoreDataProperties.m"; sourceTree = "<group>"; };
+		84F6B66E1C73A8E800549999 /* Shot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shot.h; sourceTree = "<group>"; };
+		84F6B66F1C73A8E800549999 /* Shot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shot.m; sourceTree = "<group>"; };
 		9942025298642C17F1E790E0 /* Pods-dribbleViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dribbleViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-dribbleViewer/Pods-dribbleViewer.release.xcconfig"; sourceTree = "<group>"; };
 		BB377F8518DF287ECAB72CD2 /* libPods-dribbleViewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dribbleViewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -88,6 +96,8 @@
 		84F6B6571C73A02C00549999 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84F6B6671C73A89800549999 /* Shot */,
+				84F6B65E1C73A4A500549999 /* DataModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -104,10 +114,29 @@
 		84F6B65A1C73A04F00549999 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				84F6B65B1C73A25D00549999 /* ShotsViewController.h */,
-				84F6B65C1C73A25D00549999 /* ShotsViewController.m */,
+				84F6B6681C73A8C600549999 /* Shots */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84F6B6671C73A89800549999 /* Shot */ = {
+			isa = PBXGroup;
+			children = (
+				84F6B66C1C73A8E800549999 /* Shot+CoreDataProperties.h */,
+				84F6B66D1C73A8E800549999 /* Shot+CoreDataProperties.m */,
+				84F6B66E1C73A8E800549999 /* Shot.h */,
+				84F6B66F1C73A8E800549999 /* Shot.m */,
+			);
+			path = Shot;
+			sourceTree = "<group>";
+		};
+		84F6B6681C73A8C600549999 /* Shots */ = {
+			isa = PBXGroup;
+			children = (
+				84F6B6691C73A8C600549999 /* ShotsViewController.h */,
+				84F6B66A1C73A8C600549999 /* ShotsViewController.m */,
+			);
+			path = Shots;
 			sourceTree = "<group>";
 		};
 		9F9C8FF7D55CA2C09893F885 /* Pods */ = {
@@ -232,8 +261,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F6B66B1C73A8C600549999 /* ShotsViewController.m in Sources */,
+				84F6B6711C73A8E800549999 /* Shot.m in Sources */,
 				8402415C1C738E83002C269C /* AppDelegate.m in Sources */,
-				84F6B65D1C73A25D00549999 /* ShotsViewController.m in Sources */,
+				84F6B6601C73A4A500549999 /* DataModel.xcdatamodeld in Sources */,
+				84F6B6701C73A8E800549999 /* Shot+CoreDataProperties.m in Sources */,
 				840241591C738E83002C269C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +424,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84F6B65E1C73A4A500549999 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84F6B65F1C73A4A500549999 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 84F6B65F1C73A4A500549999 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8402414C1C738E83002C269C /* Project object */;
 }

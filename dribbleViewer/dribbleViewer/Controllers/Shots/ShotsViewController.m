@@ -10,4 +10,11 @@
 
 @implementation ShotsViewController
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    
+    
+}
+
 @end
