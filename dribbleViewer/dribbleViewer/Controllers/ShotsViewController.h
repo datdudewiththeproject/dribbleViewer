@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ShotsViewController.h
 //  dribbleViewer
 //
 //  Created by admin on 16/02/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ShotsViewController : UICollectionViewController
 
 @end
-
