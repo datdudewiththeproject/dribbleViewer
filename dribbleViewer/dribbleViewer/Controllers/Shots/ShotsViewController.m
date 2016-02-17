@@ -22,7 +22,8 @@ const float kInterItemSpacing = 2;
 
 @property (nonatomic) NSArray *shots;
 @property (nonatomic) ShotsAPI *shotsAPI;
-@property (nonatomic) ShotsViewCell *sizingCell;
+
+@property (nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -33,9 +34,20 @@ const float kInterItemSpacing = 2;
     
     self.shotsAPI = [[ShotsAPI alloc] init];
     self.shotsAPI.APIDelegate = self;
-    [self.shotsAPI getStaticShots];
     
-    self.sizingCell = [[ShotsViewCell alloc] init];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(loadShots)
+                  forControlEvents:UIControlEventValueChanged];
+    [self.collectionView addSubview:self.refreshControl];
+    self.collectionView.alwaysBounceVertical = YES;
+    
+    [self loadShots];
+    
+
+}
+
+-(void)loadShots {
+    [self.shotsAPI getStaticShots];
 }
 
 #pragma mark - UICollectionView delegate methods
@@ -97,6 +109,7 @@ const float kInterItemSpacing = 2;
 
 - (void)shotsAPIdidGetShots:(NSArray *)shots
 {
+    [self.refreshControl endRefreshing];
     self.shots = shots;
     
     [self.collectionView reloadData];
