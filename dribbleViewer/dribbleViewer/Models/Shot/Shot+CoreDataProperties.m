@@ -18,5 +18,6 @@
 @dynamic shotDescription;
 @dynamic imageURL;
 @dynamic image;
+@dynamic highResImageURL;
 
 @end

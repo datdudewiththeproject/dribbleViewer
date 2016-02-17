@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *shotDescription;
 @property (nullable, nonatomic, retain) NSString *imageURL;
 @property (nullable, nonatomic, retain) NSData *image;
+@property (nullable, nonatomic, retain) NSString *highResImageURL;
 
 @end
 
