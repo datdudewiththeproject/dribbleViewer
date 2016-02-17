@@ -28,8 +28,7 @@ const float kInterItemSpacing = 2;
 
 @implementation ShotsViewController
 
--(void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     self.shotsAPI = [[ShotsAPI alloc] init];
@@ -39,22 +38,17 @@ const float kInterItemSpacing = 2;
     self.sizingCell = [[ShotsViewCell alloc] init];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:YES];
-}
-
 #pragma mark - UICollectionView delegate methods
 
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
 
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.shots count];
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     ShotsViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionViewCell" forIndexPath:indexPath];
     Shot *shot = self.shots[indexPath.row];
@@ -101,7 +95,7 @@ const float kInterItemSpacing = 2;
 
 #pragma mark - API delegate methods
 
--(void)shotsAPIdidGetShots:(NSArray *)shots
+- (void)shotsAPIdidGetShots:(NSArray *)shots
 {
     self.shots = shots;
     
@@ -110,7 +104,7 @@ const float kInterItemSpacing = 2;
 
 #pragma mark - Helpers
 
--(CGSize)constraintSize:(CGSize)size {
+- (CGSize)constraintSize:(CGSize)size {
     CGSize constraintedSize = CGSizeMake(self.view.frame.size.width*0.5-kInterItemSpacing, self.view.frame.size.height*0.5-kInterItemSpacing);
     CGSize resultSize = size;
     float proportions = resultSize.height / resultSize.width;
@@ -123,7 +117,6 @@ const float kInterItemSpacing = 2;
     }
     
     return resultSize;
-    
 }
 
 @end

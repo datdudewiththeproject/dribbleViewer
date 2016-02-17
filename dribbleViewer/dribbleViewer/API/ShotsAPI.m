@@ -18,16 +18,13 @@ const NSInteger kShotsAmount = 50;
 
 @interface ShotsAPI ()
 
-//@property (nonatomic) NSMutableArray *shots;
 @property (nonatomic) NSInteger currentPage;
 
 @end
 
 @implementation ShotsAPI
 
--(void)getStaticShots;
-{
-//    self.shots = [NSMutableArray array];
+- (void)getStaticShots {
     self.currentPage = 1;
     
     Reachability* reach = [Reachability reachabilityWithHostname:@"dribbble.com"];
@@ -39,7 +36,7 @@ const NSInteger kShotsAmount = 50;
     }
 }
 
-- (void)requestShots{
+- (void)requestShots {
     NSString *requestPath = @"/v1/shots";
     
     [[RKObjectManager sharedManager]
@@ -78,13 +75,12 @@ const NSInteger kShotsAmount = 50;
     [context save:&error];
 }
 
--(NSArray*)fetchShots {
+- (NSArray*)fetchShots {
     NSManagedObjectContext *context = [RKManagedObjectStore defaultStore].mainQueueManagedObjectContext;
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Shot"];
     
     NSSortDescriptor *descriptor1 = [NSSortDescriptor sortDescriptorWithKey:@"page" ascending:YES];
     NSSortDescriptor *descriptor2 = [NSSortDescriptor sortDescriptorWithKey:@"order" ascending:YES];
-//    fetchRequest.sortDescriptors = @[descriptor1, descriptor2];
     
     NSError *error = nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
@@ -113,7 +109,7 @@ const NSInteger kShotsAmount = 50;
     }
 }
 
--(NSArray*)filterShots:(NSArray*)shots {
+- (NSArray*)filterShots:(NSArray*)shots {
     NSMutableArray *array = [NSMutableArray array];
     
     for (Shot *shot in shots) {
@@ -125,7 +121,7 @@ const NSInteger kShotsAmount = 50;
     return array;
 }
 
--(void)returnShots {
+- (void)returnShots {
     if ([self.APIDelegate respondsToSelector:@selector(shotsAPIdidGetShots:)]) {
         NSArray *shots = [self filterShots:[self fetchShots]];
         NSInteger count = shots.count<kShotsAmount?shots.count:kShotsAmount;
