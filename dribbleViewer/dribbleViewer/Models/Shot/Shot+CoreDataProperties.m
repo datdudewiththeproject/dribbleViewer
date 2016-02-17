@@ -24,5 +24,6 @@
 @dynamic page;
 @dynamic width;
 @dynamic height;
+@dynamic shotDescriptionPlain;
 
 @end

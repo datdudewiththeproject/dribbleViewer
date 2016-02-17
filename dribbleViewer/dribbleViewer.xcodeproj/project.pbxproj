@@ -14,8 +14,8 @@
 		840241641C738E83002C269C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840241631C738E83002C269C /* Assets.xcassets */; };
 		840241671C738E83002C269C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840241651C738E83002C269C /* LaunchScreen.storyboard */; };
 		842241251C74759100BEDE9B /* ShotsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842241241C74759100BEDE9B /* ShotsViewCell.m */; };
-		848CF9231C74B0B60063BDD2 /* Shot+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 848CF9201C74B0B60063BDD2 /* Shot+CoreDataProperties.m */; };
-		848CF9241C74B0B60063BDD2 /* Shot.m in Sources */ = {isa = PBXBuildFile; fileRef = 848CF9221C74B0B60063BDD2 /* Shot.m */; };
+		848CF9321C74F8180063BDD2 /* Shot+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 848CF92F1C74F8180063BDD2 /* Shot+CoreDataProperties.m */; };
+		848CF9331C74F8180063BDD2 /* Shot.m in Sources */ = {isa = PBXBuildFile; fileRef = 848CF9311C74F8180063BDD2 /* Shot.m */; };
 		84C20F041C745E2600596798 /* ShotsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C20F031C745E2600596798 /* ShotsAPI.m */; };
 		84F6B6601C73A4A500549999 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84F6B65E1C73A4A500549999 /* DataModel.xcdatamodeld */; };
 		84F6B66B1C73A8C600549999 /* ShotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F6B66A1C73A8C600549999 /* ShotsViewController.m */; };
@@ -33,10 +33,10 @@
 		840241681C738E83002C269C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		842241231C74759100BEDE9B /* ShotsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotsViewCell.h; sourceTree = "<group>"; };
 		842241241C74759100BEDE9B /* ShotsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotsViewCell.m; sourceTree = "<group>"; };
-		848CF91F1C74B0B60063BDD2 /* Shot+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Shot+CoreDataProperties.h"; sourceTree = "<group>"; };
-		848CF9201C74B0B60063BDD2 /* Shot+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Shot+CoreDataProperties.m"; sourceTree = "<group>"; };
-		848CF9211C74B0B60063BDD2 /* Shot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shot.h; sourceTree = "<group>"; };
-		848CF9221C74B0B60063BDD2 /* Shot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shot.m; sourceTree = "<group>"; };
+		848CF92E1C74F8180063BDD2 /* Shot+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Shot+CoreDataProperties.h"; sourceTree = "<group>"; };
+		848CF92F1C74F8180063BDD2 /* Shot+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Shot+CoreDataProperties.m"; sourceTree = "<group>"; };
+		848CF9301C74F8180063BDD2 /* Shot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shot.h; sourceTree = "<group>"; };
+		848CF9311C74F8180063BDD2 /* Shot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shot.m; sourceTree = "<group>"; };
 		84C20F021C745E2600596798 /* ShotsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotsAPI.h; sourceTree = "<group>"; };
 		84C20F031C745E2600596798 /* ShotsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotsAPI.m; sourceTree = "<group>"; };
 		84F6B65F1C73A4A500549999 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -148,10 +148,10 @@
 		84F6B6671C73A89800549999 /* Shot */ = {
 			isa = PBXGroup;
 			children = (
-				848CF91F1C74B0B60063BDD2 /* Shot+CoreDataProperties.h */,
-				848CF9201C74B0B60063BDD2 /* Shot+CoreDataProperties.m */,
-				848CF9211C74B0B60063BDD2 /* Shot.h */,
-				848CF9221C74B0B60063BDD2 /* Shot.m */,
+				848CF92E1C74F8180063BDD2 /* Shot+CoreDataProperties.h */,
+				848CF92F1C74F8180063BDD2 /* Shot+CoreDataProperties.m */,
+				848CF9301C74F8180063BDD2 /* Shot.h */,
+				848CF9311C74F8180063BDD2 /* Shot.m */,
 			);
 			path = Shot;
 			sourceTree = "<group>";
@@ -287,14 +287,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				848CF9231C74B0B60063BDD2 /* Shot+CoreDataProperties.m in Sources */,
+				848CF9321C74F8180063BDD2 /* Shot+CoreDataProperties.m in Sources */,
 				84F6B66B1C73A8C600549999 /* ShotsViewController.m in Sources */,
 				8402415C1C738E83002C269C /* AppDelegate.m in Sources */,
 				84F6B6601C73A4A500549999 /* DataModel.xcdatamodeld in Sources */,
 				84C20F041C745E2600596798 /* ShotsAPI.m in Sources */,
 				842241251C74759100BEDE9B /* ShotsViewCell.m in Sources */,
 				840241591C738E83002C269C /* main.m in Sources */,
-				848CF9241C74B0B60063BDD2 /* Shot.m in Sources */,
+				848CF9331C74F8180063BDD2 /* Shot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

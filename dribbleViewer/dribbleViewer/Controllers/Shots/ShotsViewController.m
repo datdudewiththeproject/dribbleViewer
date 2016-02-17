@@ -66,7 +66,7 @@ const float kInterItemSpacing = 2;
     Shot *shot = self.shots[indexPath.row];
     
     cell.nameLabel.text = shot.title;
-    cell.descriptionLabel.text = shot.shotDescription;
+    cell.descriptionLabel.text = shot.shotDescriptionPlain;
     
     NSURL *url = [NSURL URLWithString:shot.imageURL];
     if (shot.highResImageURL) {

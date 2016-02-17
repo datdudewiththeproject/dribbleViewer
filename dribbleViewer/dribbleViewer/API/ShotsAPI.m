@@ -89,6 +89,9 @@ const NSInteger kShotsAmount = 50;
         if (!shot.page || shot.page.integerValue == 0) {
             shot.page = @(self.currentPage);
         }
+        if (!shot.shotDescriptionPlain && shot.shotDescription) {
+            shot.shotDescriptionPlain = [self stringByStrippingHTML:shot.shotDescription];
+        }
     }
     
     [context save:&error];
@@ -127,6 +130,16 @@ const NSInteger kShotsAmount = 50;
         NSInteger count = shots.count<kShotsAmount?shots.count:kShotsAmount;
         [self.APIDelegate shotsAPIdidGetShots:[shots subarrayWithRange:NSMakeRange(0, count)]];
     }
+}
+
+#pragma mark - Helpers
+
+-(NSString *) stringByStrippingHTML:(NSString*)string {
+    NSRange r;
+    NSString *s = string;
+    while ((r = [s rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+        s = [s stringByReplacingCharactersInRange:r withString:@""];
+    return s;
 }
 
 @end
