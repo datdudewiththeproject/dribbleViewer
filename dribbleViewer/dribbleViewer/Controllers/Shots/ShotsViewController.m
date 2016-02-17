@@ -7,12 +7,14 @@
 //
 
 #import "ShotsViewController.h"
-#include "Shot.h"
+#import "Shot.h"
 #import "ShotsAPI.h"
+#import "ShotsViewCell.h"
 
-#import <AFNetworking/UIImageView+AFNetworking.h>
+//#import <AFNetworking/UIImageView+AFNetworking.h>
 #import <RestKit/CoreData.h>
 #import <RestKit/RestKit.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ShotsViewController () <UICollectionViewDataSource, UICollectionViewDelegate, ShotsAPIDelegate>
 
@@ -45,12 +47,13 @@
         NSLog(@"shot: %@\n", iteratedShot.highResImageURL);
     }
     
-    self.shots = [shots subarrayWithRange:NSMakeRange(0, 5)];
+//    self.shots = [shots subarrayWithRange:NSMakeRange(0, 5)];
+    self.shots = shots;
     
     [self.collectionView reloadData];
 }
 
-#pragma mark - UICOllectionView
+#pragma mark - UICollectionView
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -62,14 +65,13 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionViewCell" forIndexPath:indexPath];
+    ShotsViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionViewCell" forIndexPath:indexPath];
     Shot *shot = self.shots[indexPath.row];
-    UIImageView *image = [[UIImageView alloc] init];
-    [image setImageWithURL:[NSURL URLWithString:shot.imageURL]];
     
-    
-    
-    [cell.contentView addSubview:image];
+    NSURL *url = [NSURL URLWithString:shot.imageURL];
+    [cell.imageView sd_setImageWithURL:url];
+
+    cell.backgroundColor = [UIColor blackColor];
     return cell;
 }
 

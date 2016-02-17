@@ -26,7 +26,7 @@
     [[RKObjectManager sharedManager]
      getObjectsAtPath:requestPath
      parameters:@{@"access_token" : @"3b126b5a5b770316ad3a609806b1b629bacd1dbf928dd39442406bd3d888cf20",
-                  @"per_page":@"5"}
+                  @"per_page":@"25"}
      //     parameters:nil
      success: ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
          //articles have been saved in core data by now
@@ -54,6 +54,14 @@
     //    Shot *shot = [fetchedObjects firstObject];
     
 //    self.shots = [fetchedObjects subarrayWithRange:NSMakeRange(0, 5)];
+    
+//    for (Shot *shot in fetchedObjects) {
+//        //
+//        if (!shot.image) {
+//            shot.image = [NSData dataWithContentsOfURL:[NSURL URLWithString:shot.imageURL]];
+//        }
+//        
+//    }
     
     if ([self.APIDelegate respondsToSelector:@selector(shotsAPIdidGetShots:)]) {
         [self.APIDelegate shotsAPIdidGetShots:fetchedObjects];

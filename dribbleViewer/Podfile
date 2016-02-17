@@ -3,5 +3,6 @@
 
 target 'dribbleViewer' do
 	pod 'RestKit'
+	pod 'SDWebImage'
 end
 
