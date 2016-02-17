@@ -22,5 +22,7 @@
 @dynamic shotID;
 @dynamic title;
 @dynamic page;
+@dynamic width;
+@dynamic height;
 
 @end

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -45,19 +44,37 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3TX-bY-GI7">
-                                            <rect key="frame" x="8" y="8" width="34" height="34"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="8"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSp-tD-FUS">
+                                            <rect key="frame" x="3" y="8" width="45" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Onj-0L-jvq">
+                                            <rect key="frame" x="-19" y="29" width="88" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="bottomMargin" secondItem="3TX-bY-GI7" secondAttribute="bottom" id="Kph-R8-jUn"/>
-                                    <constraint firstItem="3TX-bY-GI7" firstAttribute="top" secondItem="dpA-SV-OWu" secondAttribute="topMargin" id="OL4-UJ-rjs"/>
-                                    <constraint firstItem="3TX-bY-GI7" firstAttribute="leading" secondItem="dpA-SV-OWu" secondAttribute="leadingMargin" id="W87-9L-eHE"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="3TX-bY-GI7" secondAttribute="trailing" id="Wca-Fg-YTu"/>
+                                    <constraint firstItem="3TX-bY-GI7" firstAttribute="top" secondItem="dpA-SV-OWu" secondAttribute="top" id="2OZ-qd-zKI"/>
+                                    <constraint firstItem="3TX-bY-GI7" firstAttribute="bottom" secondItem="lSp-tD-FUS" secondAttribute="top" id="39n-8M-mr7"/>
+                                    <constraint firstItem="3TX-bY-GI7" firstAttribute="leading" secondItem="dpA-SV-OWu" secondAttribute="leading" id="NEK-Ic-KW1"/>
+                                    <constraint firstAttribute="trailing" secondItem="3TX-bY-GI7" secondAttribute="trailing" id="PaN-y3-g5h"/>
+                                    <constraint firstItem="lSp-tD-FUS" firstAttribute="centerX" secondItem="dpA-SV-OWu" secondAttribute="centerX" id="Qd3-Or-tsw"/>
+                                    <constraint firstItem="Onj-0L-jvq" firstAttribute="top" secondItem="lSp-tD-FUS" secondAttribute="bottom" id="Tn3-X8-LLG"/>
+                                    <constraint firstAttribute="bottom" secondItem="Onj-0L-jvq" secondAttribute="bottom" id="YTF-ME-vju"/>
+                                    <constraint firstItem="Onj-0L-jvq" firstAttribute="centerX" secondItem="dpA-SV-OWu" secondAttribute="centerX" id="lD5-TE-IP8"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="descriptionLabel" destination="Onj-0L-jvq" id="wGb-ae-Tdk"/>
                                     <outlet property="imageView" destination="3TX-bY-GI7" id="w9o-M1-VKM"/>
+                                    <outlet property="nameLabel" destination="lSp-tD-FUS" id="uTw-D0-KCo"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

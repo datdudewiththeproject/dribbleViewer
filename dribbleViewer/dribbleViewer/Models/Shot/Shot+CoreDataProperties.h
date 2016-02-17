@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *shotID;
 @property (nullable, nonatomic, retain) NSString *title;
 @property (nullable, nonatomic, retain) NSNumber *page;
+@property (nullable, nonatomic, retain) NSNumber *width;
+@property (nullable, nonatomic, retain) NSNumber *height;
 
 @end
 

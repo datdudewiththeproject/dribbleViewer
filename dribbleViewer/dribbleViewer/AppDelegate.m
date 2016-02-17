@@ -46,6 +46,8 @@
     [shotMapping addAttributeMappingsFromDictionary:@{ @"id" : @"shotID",
                                                        @"title" : @"title",
                                                        @"description" : @"shotDescription",
+                                                       @"width" : @"width",
+                                                       @"height" : @"height",                                                       
                                                        @"animated" : @"animated",
                                                        @"images.hidpi" : @"imageURL",
                                                        @"images.normal" : @"highResImageURL",

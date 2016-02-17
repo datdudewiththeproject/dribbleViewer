@@ -69,10 +69,48 @@
     Shot *shot = self.shots[indexPath.row];
     
     NSURL *url = [NSURL URLWithString:shot.imageURL];
+    if (shot.highResImageURL) {
+        url = [NSURL URLWithString:shot.highResImageURL];
+    }
     [cell.imageView sd_setImageWithURL:url];
 
-    cell.backgroundColor = [UIColor blackColor];
+    cell.backgroundColor = [UIColor grayColor];
     return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    Shot *shot = self.shots[indexPath.row];
+    CGSize imageSize = CGSizeMake(shot.width.floatValue, shot.height.floatValue);
+    float proportions = imageSize.height / imageSize.width;
+    CGSize constraintedSize = CGSizeMake(self.view.frame.size.width*0.5, self.view.frame.size.height*0.5);
+    
+    if (imageSize.width>constraintedSize.width) {
+        imageSize = CGSizeMake(constraintedSize.width, constraintedSize.width * proportions);
+    }
+    if (imageSize.height>constraintedSize.height) {
+        imageSize = CGSizeMake(constraintedSize.height / proportions, constraintedSize.height);
+    }
+    
+//    NSLog(@"SIZE %f %f", constraintedSize.width, constraintedSize.height);
+//    imageSize = CGSizeMake(500.0/(indexPath.row+1), 500.0/(indexPath.row+1));
+    
+    return imageSize;
+}
+
+//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+//{
+//    return UIEdgeInsetsMake(0, 0, 0, 0);
+//}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0;
 }
 
 @end
