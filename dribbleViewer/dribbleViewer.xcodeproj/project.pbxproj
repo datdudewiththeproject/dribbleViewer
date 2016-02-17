@@ -13,6 +13,7 @@
 		840241621C738E83002C269C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840241601C738E83002C269C /* Main.storyboard */; };
 		840241641C738E83002C269C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840241631C738E83002C269C /* Assets.xcassets */; };
 		840241671C738E83002C269C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840241651C738E83002C269C /* LaunchScreen.storyboard */; };
+		84C20F041C745E2600596798 /* ShotsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C20F031C745E2600596798 /* ShotsAPI.m */; };
 		84F6B6601C73A4A500549999 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84F6B65E1C73A4A500549999 /* DataModel.xcdatamodeld */; };
 		84F6B66B1C73A8C600549999 /* ShotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F6B66A1C73A8C600549999 /* ShotsViewController.m */; };
 		84F6B6761C73B36B00549999 /* Shot+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F6B6731C73B36B00549999 /* Shot+CoreDataProperties.m */; };
@@ -29,6 +30,8 @@
 		840241631C738E83002C269C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		840241661C738E83002C269C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		840241681C738E83002C269C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C20F021C745E2600596798 /* ShotsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotsAPI.h; sourceTree = "<group>"; };
+		84C20F031C745E2600596798 /* ShotsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotsAPI.m; sourceTree = "<group>"; };
 		84F6B65F1C73A4A500549999 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		84F6B6691C73A8C600549999 /* ShotsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotsViewController.h; sourceTree = "<group>"; };
 		84F6B66A1C73A8C600549999 /* ShotsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotsViewController.m; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 		840241561C738E83002C269C /* dribbleViewer */ = {
 			isa = PBXGroup;
 			children = (
+				84C20F011C745DE200596798 /* API */,
 				84F6B6571C73A02C00549999 /* Models */,
 				84F6B6591C73A04300549999 /* Views */,
 				84F6B65A1C73A04F00549999 /* Controllers */,
@@ -91,6 +95,15 @@
 				840241581C738E83002C269C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84C20F011C745DE200596798 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				84C20F021C745E2600596798 /* ShotsAPI.h */,
+				84C20F031C745E2600596798 /* ShotsAPI.m */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		84F6B6571C73A02C00549999 /* Models */ = {
@@ -265,6 +278,7 @@
 				84F6B6771C73B36B00549999 /* Shot.m in Sources */,
 				8402415C1C738E83002C269C /* AppDelegate.m in Sources */,
 				84F6B6601C73A4A500549999 /* DataModel.xcdatamodeld in Sources */,
+				84C20F041C745E2600596798 /* ShotsAPI.m in Sources */,
 				84F6B6761C73B36B00549999 /* Shot+CoreDataProperties.m in Sources */,
 				840241591C738E83002C269C /* main.m in Sources */,
 			);

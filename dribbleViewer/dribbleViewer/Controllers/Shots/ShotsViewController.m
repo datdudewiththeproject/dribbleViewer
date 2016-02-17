@@ -8,71 +8,46 @@
 
 #import "ShotsViewController.h"
 #include "Shot.h"
+#import "ShotsAPI.h"
 
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <RestKit/CoreData.h>
 #import <RestKit/RestKit.h>
 
-@interface ShotsViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ShotsViewController () <UICollectionViewDataSource, UICollectionViewDelegate, ShotsAPIDelegate>
 
 @property (nonatomic) NSArray *shots;
+@property (nonatomic) ShotsAPI *shotsAPI;
 
 @end
 
 @implementation ShotsViewController
 
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.shotsAPI = [[ShotsAPI alloc] init];
+    self.shotsAPI.APIDelegate = self;
+    [self.shotsAPI getStaticShots];
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    
-    [self requestData];
-    
 }
 
-- (void)requestData {
-    
-    NSString *requestPath = @"/v1/shots";
-    
-    [[RKObjectManager sharedManager]
-     getObjectsAtPath:requestPath
-     parameters:@{@"access_token" : @"3b126b5a5b770316ad3a609806b1b629bacd1dbf928dd39442406bd3d888cf20",
-                  @"per_page":@"5"}
-//     parameters:nil
-     success: ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-         //articles have been saved in core data by now
-         [self fetchShotsFromContext];
-     }
-     failure: ^(RKObjectRequestOperation *operation, NSError *error) {
-         RKLogError(@"Load failed with error: %@", error);
-     }
-     ];
-    
-}
-
-- (void)fetchShotsFromContext {
-    
-    NSManagedObjectContext *context = [RKManagedObjectStore defaultStore].mainQueueManagedObjectContext;
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Shot"];
-    
-    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
-    fetchRequest.sortDescriptors = @[descriptor];
-    
-    NSError *error = nil;
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    
-//    Shot *shot = [fetchedObjects firstObject];
-    
-    for (Shot *iteratedShot in fetchedObjects)
+-(void)shotsAPIdidGetShots:(NSArray *)shots
+{
+    for (Shot *iteratedShot in shots)
     {
         
         NSLog(@"shot: %@\n", iteratedShot.highResImageURL);
     }
     
-    self.shots = [fetchedObjects subarrayWithRange:NSMakeRange(0, 5)];
+    self.shots = [shots subarrayWithRange:NSMakeRange(0, 5)];
     
     [self.collectionView reloadData];
-    
-//    NSLog(@"shot: %@", shot);
 }
 
 #pragma mark - UICOllectionView
