@@ -11,10 +11,10 @@
 #import "ShotsAPI.h"
 #import "ShotsViewCell.h"
 
-//#import <AFNetworking/UIImageView+AFNetworking.h>
 #import <RestKit/CoreData.h>
 #import <RestKit/RestKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <JTSImageViewController/JTSImageViewController.h>
 
 const float kInterItemSpacing = 2;
 
@@ -103,6 +103,33 @@ const float kInterItemSpacing = 2;
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return kInterItemSpacing;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    Shot *shot = self.shots[indexPath.row];
+    
+    NSString *imageKey = shot.imageURL;
+    if (shot.highResImageURL) {
+        imageKey = shot.highResImageURL;
+    }
+    
+    UIImage *image = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:imageKey];
+    
+    if (!image) {
+        return;
+    }
+    
+    JTSImageInfo *imageInfo = [[JTSImageInfo alloc] init];
+    imageInfo.image = image;
+    imageInfo.referenceView = self.view;
+    
+    JTSImageViewController *imageViewer = [[JTSImageViewController alloc]
+                                           initWithImageInfo:imageInfo
+                                           mode:JTSImageViewControllerMode_Image
+                                           backgroundStyle:JTSImageViewControllerBackgroundOption_Blurred];
+
+    [imageViewer showFromViewController:self transition:JTSImageViewControllerTransition_FromOffscreen];
 }
 
 #pragma mark - API delegate methods

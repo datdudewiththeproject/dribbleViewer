@@ -83,6 +83,7 @@
 				84F6B6571C73A02C00549999 /* Models */,
 				84F6B6591C73A04300549999 /* Views */,
 				84F6B65A1C73A04F00549999 /* Controllers */,
+				84867F451C75042B00C81BB2 /* Helpers */,
 				8402415A1C738E83002C269C /* AppDelegate.h */,
 				8402415B1C738E83002C269C /* AppDelegate.m */,
 				840241631C738E83002C269C /* Assets.xcassets */,
@@ -107,6 +108,13 @@
 				842241241C74759100BEDE9B /* ShotsViewCell.m */,
 			);
 			path = ShotsViewCell;
+			sourceTree = "<group>";
+		};
+		84867F451C75042B00C81BB2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		84C20F011C745DE200596798 /* API */ = {
