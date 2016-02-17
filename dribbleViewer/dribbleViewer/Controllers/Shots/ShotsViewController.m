@@ -16,7 +16,7 @@
 #import <RestKit/RestKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@interface ShotsViewController () <UICollectionViewDataSource, UICollectionViewDelegate, ShotsAPIDelegate>
+@interface ShotsViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, ShotsAPIDelegate>
 
 @property (nonatomic) NSArray *shots;
 @property (nonatomic) ShotsAPI *shotsAPI;
