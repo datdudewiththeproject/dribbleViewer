@@ -46,32 +46,32 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="3TX-bY-GI7">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="1"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="lSp-tD-FUS">
-                                            <rect key="frame" x="0.0" y="1" width="50" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="lSp-tD-FUS">
+                                            <rect key="frame" x="2" y="1" width="46" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Onj-0L-jvq">
-                                            <rect key="frame" x="0.0" y="22" width="50" height="28"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Onj-0L-jvq">
+                                            <rect key="frame" x="2" y="22" width="46" height="28"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="lSp-tD-FUS" secondAttribute="trailing" id="1eP-UO-36y"/>
+                                    <constraint firstAttribute="trailing" secondItem="lSp-tD-FUS" secondAttribute="trailing" constant="2" id="1eP-UO-36y"/>
                                     <constraint firstItem="3TX-bY-GI7" firstAttribute="top" secondItem="dpA-SV-OWu" secondAttribute="top" id="2OZ-qd-zKI"/>
                                     <constraint firstItem="3TX-bY-GI7" firstAttribute="bottom" secondItem="lSp-tD-FUS" secondAttribute="top" id="39n-8M-mr7"/>
                                     <constraint firstItem="3TX-bY-GI7" firstAttribute="leading" secondItem="dpA-SV-OWu" secondAttribute="leading" id="NEK-Ic-KW1"/>
                                     <constraint firstAttribute="trailing" secondItem="3TX-bY-GI7" secondAttribute="trailing" id="PaN-y3-g5h"/>
-                                    <constraint firstItem="lSp-tD-FUS" firstAttribute="leading" secondItem="dpA-SV-OWu" secondAttribute="leading" id="Qd0-da-97z"/>
-                                    <constraint firstAttribute="trailing" secondItem="Onj-0L-jvq" secondAttribute="trailing" id="Ryh-9x-n9g"/>
+                                    <constraint firstItem="lSp-tD-FUS" firstAttribute="leading" secondItem="dpA-SV-OWu" secondAttribute="leading" constant="2" id="Qd0-da-97z"/>
+                                    <constraint firstAttribute="trailing" secondItem="Onj-0L-jvq" secondAttribute="trailing" constant="2" id="Ryh-9x-n9g"/>
                                     <constraint firstItem="Onj-0L-jvq" firstAttribute="top" secondItem="lSp-tD-FUS" secondAttribute="bottom" id="Tn3-X8-LLG"/>
                                     <constraint firstAttribute="bottom" secondItem="Onj-0L-jvq" secondAttribute="bottom" id="YTF-ME-vju"/>
-                                    <constraint firstItem="Onj-0L-jvq" firstAttribute="leading" secondItem="dpA-SV-OWu" secondAttribute="leading" id="ZDz-nb-p88"/>
+                                    <constraint firstItem="Onj-0L-jvq" firstAttribute="leading" secondItem="dpA-SV-OWu" secondAttribute="leading" constant="2" id="ZDz-nb-p88"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="Onj-0L-jvq" id="wGb-ae-Tdk"/>
