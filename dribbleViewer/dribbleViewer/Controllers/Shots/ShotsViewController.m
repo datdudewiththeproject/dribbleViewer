@@ -16,10 +16,13 @@
 #import <RestKit/RestKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
+const float kInterItemSpacing = 2;
+
 @interface ShotsViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, ShotsAPIDelegate>
 
 @property (nonatomic) NSArray *shots;
 @property (nonatomic) ShotsAPI *shotsAPI;
+@property (nonatomic) ShotsViewCell *sizingCell;
 
 @end
 
@@ -32,6 +35,8 @@
     self.shotsAPI = [[ShotsAPI alloc] init];
     self.shotsAPI.APIDelegate = self;
     [self.shotsAPI getStaticShots];
+    
+    self.sizingCell = [[ShotsViewCell alloc] init];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -39,21 +44,7 @@
     [super viewWillAppear:YES];
 }
 
--(void)shotsAPIdidGetShots:(NSArray *)shots
-{
-    for (Shot *iteratedShot in shots)
-    {
-        
-        NSLog(@"shot: %d %d %@\n", iteratedShot.page.integerValue, iteratedShot.order.integerValue, iteratedShot.highResImageURL);
-    }
-    
-//    self.shots = [shots subarrayWithRange:NSMakeRange(0, 5)];
-    self.shots = shots;
-    
-    [self.collectionView reloadData];
-}
-
-#pragma mark - UICollectionView
+#pragma mark - UICollectionView delegate methods
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -68,13 +59,17 @@
     ShotsViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionViewCell" forIndexPath:indexPath];
     Shot *shot = self.shots[indexPath.row];
     
+    cell.nameLabel.text = shot.title;
+    cell.descriptionLabel.text = shot.shotDescription;
+    
     NSURL *url = [NSURL URLWithString:shot.imageURL];
     if (shot.highResImageURL) {
         url = [NSURL URLWithString:shot.highResImageURL];
     }
+    
     [cell.imageView sd_setImageWithURL:url];
-
-    cell.backgroundColor = [UIColor grayColor];
+    cell.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+    
     return cell;
 }
 
@@ -82,35 +77,53 @@
 {
     Shot *shot = self.shots[indexPath.row];
     CGSize imageSize = CGSizeMake(shot.width.floatValue, shot.height.floatValue);
-    float proportions = imageSize.height / imageSize.width;
-    CGSize constraintedSize = CGSizeMake(self.view.frame.size.width*0.5, self.view.frame.size.height*0.5);
+    imageSize = [self constraintSize:imageSize];
+
+    // TODO: use cell self-sizing
+    float verticalSpaceCorrector = 80;
     
-    if (imageSize.width>constraintedSize.width) {
-        imageSize = CGSizeMake(constraintedSize.width, constraintedSize.width * proportions);
+    if (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular) {
+        verticalSpaceCorrector = -60;
     }
-    if (imageSize.height>constraintedSize.height) {
-        imageSize = CGSizeMake(constraintedSize.height / proportions, constraintedSize.height);
-    }
     
-//    NSLog(@"SIZE %f %f", constraintedSize.width, constraintedSize.height);
-//    imageSize = CGSizeMake(500.0/(indexPath.row+1), 500.0/(indexPath.row+1));
+    CGSize cellSize = CGSizeMake(imageSize.width, imageSize.height + verticalSpaceCorrector);
     
-    return imageSize;
+    return cellSize;
 }
 
-//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-//{
-//    return UIEdgeInsetsMake(0, 0, 0, 0);
-//}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 0;
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return kInterItemSpacing;
 }
 
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return kInterItemSpacing;
+}
+
+#pragma mark - API delegate methods
+
+-(void)shotsAPIdidGetShots:(NSArray *)shots
 {
-    return 0;
+    self.shots = shots;
+    
+    [self.collectionView reloadData];
+}
+
+#pragma mark - Helpers
+
+-(CGSize)constraintSize:(CGSize)size {
+    CGSize constraintedSize = CGSizeMake(self.view.frame.size.width*0.5-kInterItemSpacing, self.view.frame.size.height*0.5-kInterItemSpacing);
+    CGSize resultSize = size;
+    float proportions = resultSize.height / resultSize.width;
+    
+    if (resultSize.width>constraintedSize.width) {
+        resultSize = CGSizeMake(constraintedSize.width, constraintedSize.width * proportions);
+    }
+    if (resultSize.height>constraintedSize.height) {
+        resultSize = CGSizeMake(constraintedSize.height / proportions, constraintedSize.height);
+    }
+    
+    return resultSize;
+    
 }
 
 @end
