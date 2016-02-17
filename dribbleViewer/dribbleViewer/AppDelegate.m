@@ -17,7 +17,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSURL *baseURL = [NSURL URLWithString:@"https://api.dribbble.com/"];
     RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:baseURL];

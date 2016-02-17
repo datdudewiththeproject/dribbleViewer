@@ -42,8 +42,6 @@ const float kInterItemSpacing = 2;
     self.collectionView.alwaysBounceVertical = YES;
     
     [self loadShots];
-    
-
 }
 
 -(void)loadShots {

@@ -39,6 +39,7 @@ const NSInteger kShotsAmount = 50;
 - (void)requestShots {
     NSString *requestPath = @"/v1/shots";
     
+    // TODO: send token with header
     [[RKObjectManager sharedManager]
      getObjectsAtPath:requestPath
      parameters:@{@"access_token" : @"3b126b5a5b770316ad3a609806b1b629bacd1dbf928dd39442406bd3d888cf20",
