@@ -2,7 +2,7 @@
 //  Shot+CoreDataProperties.m
 //  dribbleViewer
 //
-//  Created by admin on 16/02/16.
+//  Created by admin on 17/02/16.
 //  Copyright © 2016 sevrikov. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,11 +13,14 @@
 
 @implementation Shot (CoreDataProperties)
 
+@dynamic animated;
+@dynamic highResImageURL;
+@dynamic imageURL;
+@dynamic isNew;
+@dynamic order;
+@dynamic shotDescription;
 @dynamic shotID;
 @dynamic title;
-@dynamic shotDescription;
-@dynamic imageURL;
-@dynamic image;
-@dynamic highResImageURL;
+@dynamic page;
 
 @end

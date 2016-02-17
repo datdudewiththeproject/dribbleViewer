@@ -14,11 +14,11 @@
 		840241641C738E83002C269C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840241631C738E83002C269C /* Assets.xcassets */; };
 		840241671C738E83002C269C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840241651C738E83002C269C /* LaunchScreen.storyboard */; };
 		842241251C74759100BEDE9B /* ShotsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842241241C74759100BEDE9B /* ShotsViewCell.m */; };
+		848CF91D1C7491FF0063BDD2 /* Shot+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 848CF91A1C7491FF0063BDD2 /* Shot+CoreDataProperties.m */; };
+		848CF91E1C7491FF0063BDD2 /* Shot.m in Sources */ = {isa = PBXBuildFile; fileRef = 848CF91C1C7491FF0063BDD2 /* Shot.m */; };
 		84C20F041C745E2600596798 /* ShotsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C20F031C745E2600596798 /* ShotsAPI.m */; };
 		84F6B6601C73A4A500549999 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84F6B65E1C73A4A500549999 /* DataModel.xcdatamodeld */; };
 		84F6B66B1C73A8C600549999 /* ShotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F6B66A1C73A8C600549999 /* ShotsViewController.m */; };
-		84F6B6761C73B36B00549999 /* Shot+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F6B6731C73B36B00549999 /* Shot+CoreDataProperties.m */; };
-		84F6B6771C73B36B00549999 /* Shot.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F6B6751C73B36B00549999 /* Shot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,15 +33,15 @@
 		840241681C738E83002C269C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		842241231C74759100BEDE9B /* ShotsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotsViewCell.h; sourceTree = "<group>"; };
 		842241241C74759100BEDE9B /* ShotsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotsViewCell.m; sourceTree = "<group>"; };
+		848CF9191C7491FF0063BDD2 /* Shot+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Shot+CoreDataProperties.h"; sourceTree = "<group>"; };
+		848CF91A1C7491FF0063BDD2 /* Shot+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Shot+CoreDataProperties.m"; sourceTree = "<group>"; };
+		848CF91B1C7491FF0063BDD2 /* Shot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shot.h; sourceTree = "<group>"; };
+		848CF91C1C7491FF0063BDD2 /* Shot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shot.m; sourceTree = "<group>"; };
 		84C20F021C745E2600596798 /* ShotsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotsAPI.h; sourceTree = "<group>"; };
 		84C20F031C745E2600596798 /* ShotsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotsAPI.m; sourceTree = "<group>"; };
 		84F6B65F1C73A4A500549999 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		84F6B6691C73A8C600549999 /* ShotsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotsViewController.h; sourceTree = "<group>"; };
 		84F6B66A1C73A8C600549999 /* ShotsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotsViewController.m; sourceTree = "<group>"; };
-		84F6B6721C73B36B00549999 /* Shot+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Shot+CoreDataProperties.h"; sourceTree = "<group>"; };
-		84F6B6731C73B36B00549999 /* Shot+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Shot+CoreDataProperties.m"; sourceTree = "<group>"; };
-		84F6B6741C73B36B00549999 /* Shot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shot.h; sourceTree = "<group>"; };
-		84F6B6751C73B36B00549999 /* Shot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shot.m; sourceTree = "<group>"; };
 		9942025298642C17F1E790E0 /* Pods-dribbleViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dribbleViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-dribbleViewer/Pods-dribbleViewer.release.xcconfig"; sourceTree = "<group>"; };
 		BB377F8518DF287ECAB72CD2 /* libPods-dribbleViewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dribbleViewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -148,10 +148,10 @@
 		84F6B6671C73A89800549999 /* Shot */ = {
 			isa = PBXGroup;
 			children = (
-				84F6B6721C73B36B00549999 /* Shot+CoreDataProperties.h */,
-				84F6B6731C73B36B00549999 /* Shot+CoreDataProperties.m */,
-				84F6B6741C73B36B00549999 /* Shot.h */,
-				84F6B6751C73B36B00549999 /* Shot.m */,
+				848CF9191C7491FF0063BDD2 /* Shot+CoreDataProperties.h */,
+				848CF91A1C7491FF0063BDD2 /* Shot+CoreDataProperties.m */,
+				848CF91B1C7491FF0063BDD2 /* Shot.h */,
+				848CF91C1C7491FF0063BDD2 /* Shot.m */,
 			);
 			path = Shot;
 			sourceTree = "<group>";
@@ -287,14 +287,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848CF91D1C7491FF0063BDD2 /* Shot+CoreDataProperties.m in Sources */,
 				84F6B66B1C73A8C600549999 /* ShotsViewController.m in Sources */,
-				84F6B6771C73B36B00549999 /* Shot.m in Sources */,
 				8402415C1C738E83002C269C /* AppDelegate.m in Sources */,
 				84F6B6601C73A4A500549999 /* DataModel.xcdatamodeld in Sources */,
 				84C20F041C745E2600596798 /* ShotsAPI.m in Sources */,
-				84F6B6761C73B36B00549999 /* Shot+CoreDataProperties.m in Sources */,
 				842241251C74759100BEDE9B /* ShotsViewCell.m in Sources */,
 				840241591C738E83002C269C /* main.m in Sources */,
+				848CF91E1C7491FF0063BDD2 /* Shot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

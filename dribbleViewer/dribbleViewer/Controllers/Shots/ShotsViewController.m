@@ -44,7 +44,7 @@
     for (Shot *iteratedShot in shots)
     {
         
-        NSLog(@"shot: %@\n", iteratedShot.highResImageURL);
+        NSLog(@"shot: %d %d %@\n", iteratedShot.page.integerValue, iteratedShot.order.integerValue, iteratedShot.highResImageURL);
     }
     
 //    self.shots = [shots subarrayWithRange:NSMakeRange(0, 5)];

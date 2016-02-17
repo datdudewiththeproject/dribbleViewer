@@ -38,6 +38,7 @@
     [managedObjectStore createManagedObjectContexts];
     
     managedObjectStore.managedObjectCache = [[RKInMemoryManagedObjectCache alloc] initWithManagedObjectContext:managedObjectStore.persistentStoreManagedObjectContext];
+    self.coreDataContext = managedObjectStore.persistentStoreManagedObjectContext;
     
     // Map entities
     RKEntityMapping *shotMapping = [RKEntityMapping mappingForEntityForName:@"Shot" inManagedObjectStore:managedObjectStore];
@@ -45,8 +46,10 @@
     [shotMapping addAttributeMappingsFromDictionary:@{ @"id" : @"shotID",
                                                        @"title" : @"title",
                                                        @"description" : @"shotDescription",
+                                                       @"animated" : @"animated",
                                                        @"images.hidpi" : @"imageURL",
-                                                       @"images.normal" : @"highResImageURL"}];
+                                                       @"images.normal" : @"highResImageURL",
+                                                       @"@metadata.mapping.collectionIndex" :  @"order"}];
     
     RKResponseDescriptor *shotsResponseDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:shotMapping
